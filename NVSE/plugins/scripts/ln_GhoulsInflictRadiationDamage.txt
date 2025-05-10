@@ -22,7 +22,7 @@ if eval GetPluginVersion "ShowOffNVSE Plugin" < 145
 endif
 
 ; Load INI settings
-Goo1.AuxVarSetFlt "*GIRD_INI" (GetMaxOf 0 (GetINIFloat_Cached "General:fRadMult" "Stentorious\GhoulsInflictRadiationDamage.ini")) 0
+Goo1.AuxVarSetFlt "*GIRD_INI" (GetMaxOf 0 (GetINIFloat_Cached "General:fRadMul" "Stentorious\GhoulsInflictRadiationDamage.ini")) 0
 Goo1.AuxVarSetFlt "*GIRD_INI" (GetMaxOf 0 (GetINIFloat_Cached "General:fRadMin" "Stentorious\GhoulsInflictRadiationDamage.ini")) 1
 
 ; Mutated
