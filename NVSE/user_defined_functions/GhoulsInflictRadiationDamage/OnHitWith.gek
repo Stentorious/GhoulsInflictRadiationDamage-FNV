@@ -1,0 +1,47 @@
+ref rTarget
+ref rWeapon
+
+float fDamage
+ref rAttacker
+ref rEffect
+array_var aFactions
+array_var aIter
+array_var aResult
+
+begin Function {rTarget, rWeapon}
+
+	; Validate attacker
+	if eval IsReference (rAttacker = rTarget.GetHitAttacker) == 0
+		return
+	endif
+	aFactions = GetBaseFactions rAttacker
+	aResult = &(ar_FindWhere aFactions ({aIter} => HasKeyword (*aIter) "InflictRadDamage"))
+	fDamage = ((TypeOf *aResult) != "Number" || (*aResult != 0) || (HasKeyword (rAttacker.GBF) "InflictRadDamage"))
+	aFactions = aIter = aResult = ar_Null
+	if eval fDamage == 0
+		return
+	endif
+
+	; Init cloned radiation effect
+	if eval GetType (rEffect = Goo1.AuxVarGetRef "*GIRDEffect") != 20
+		rEffect = TempCloneForm GoldenGeckoRadiation 1
+		rEffect.LNSetName "Radiation Damage"
+		SetNthEffectTraitNumeric rEffect 0 2 0
+		Goo1.AuxVarSetRef "*GIRDEffect" rEffect
+	endif
+	if eval IsFormValid rEffect == 0
+		return
+	endif
+
+	; Apply effect to player
+	SetNthEffectTraitNumeric rEffect 0 0 (GetMaxOf (Goo1.AuxVarGetFlt "*GIRD_INI" 1) ((fDamage = rTarget.GetHitHealthDamage) * (Goo1.AuxVarGetFlt "*GIRD_INI" 0)))
+	Player.CastImmediate rEffect rAttacker
+	if eval fDamage < 10
+		PlaySound UIPipBoyRadiationA
+	elseif eval fDamage < 50
+		PlaySound UIPipBoyRadiationB
+	else
+		PlaySound UIPipBoyRadiationC
+	endif
+
+end
