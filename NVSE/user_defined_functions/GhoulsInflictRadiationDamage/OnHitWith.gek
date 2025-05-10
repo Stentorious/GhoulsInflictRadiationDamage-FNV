@@ -23,11 +23,11 @@ begin Function {rTarget, rWeapon}
 	endif
 
 	; Init cloned radiation effect
-	if eval GetType (rEffect = Goo1.AuxVarGetRef "*GIRDEffect") != 20
+	if eval GetType (rEffect = Goo1.AuxVarGetRef "*GIRD_Ref") != 20
 		rEffect = TempCloneForm GoldenGeckoRadiation 1
 		rEffect.LNSetName "Radiation Damage"
 		SetNthEffectTraitNumeric rEffect 0 2 0
-		Goo1.AuxVarSetRef "*GIRDEffect" rEffect
+		Goo1.AuxVarSetRef "*GIRD_Ref" rEffect
 	endif
 	if eval IsFormValid rEffect == 0
 		return
