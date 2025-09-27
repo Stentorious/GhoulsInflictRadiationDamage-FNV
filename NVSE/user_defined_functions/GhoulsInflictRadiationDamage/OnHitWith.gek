@@ -15,15 +15,15 @@ begin Function {rTarget, rWeapon}
 		return
 	endif
 	aFactions = GetBaseFactions rAttacker
-	aResult = &(ar_FindWhere aFactions ({aIter} => HasKeyword (*aIter) "InflictRadDamage"))
-	fDamage = ((TypeOf *aResult) != "Number" || (*aResult != 0) || (HasKeyword (rAttacker.GBF) "InflictRadDamage"))
+	aResult = &(ar_FindWhere aFactions ({aIter} => AuxVarGetFlt "*InflictRadDamage" 0 (*aIter) > 0))
+	fDamage = ((TypeOf *aResult) != "Number" || (*aResult != 0) || (AuxVarGetFlt "*InflictRadDamage" 0 (rAttacker.GBF) > 0))
 	aFactions = aIter = aResult = ar_Null
 	if eval fDamage == 0
 		return
 	endif
 
 	; Init cloned radiation effect
-	if eval GetType (rEffect = Goo1.AuxVarGetRef "*GIRD_Ref") != 20
+	if eval IsReference (rEffect = Goo1.AuxVarGetRef "*GIRD_Ref") == 0 || GetType rEffect != 20 || rEffect.LNGetName != "Radiation Damage"
 		rEffect = TempCloneForm GoldenGeckoRadiation 1
 		rEffect.LNSetName "Radiation Damage"
 		SetNthEffectTraitNumeric rEffect 0 2 0

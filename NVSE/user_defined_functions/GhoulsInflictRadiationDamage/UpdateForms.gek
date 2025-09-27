@@ -1,0 +1,34 @@
+Begin Function {}
+
+	; Mutated
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 0) 0 FeralGhoulFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 1) 0 CentaurFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 2) 0 SuperMutantFaction
+	if eval IsModLoaded "PointLookout.esm"
+		AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 3) 0 (EditorIDToFormID "DLC04SwampFolkFaction")
+	endif
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 4) 0 SporePlantFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 5) 0 DLC01TrogFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 6) 0 NVDLC04TunnelerFaction
+	; Insect
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 7) 0 AntFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 8) 0 BloatflyFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 9) 0 VCrCazadorFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 10) 0 MantisFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 11) 0 RadRoachFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 12) 0 RadscorpionFaction
+	; Animal
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 13) 0 VCrBigHornerFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 14) 0 BrahminFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 15) 0 DogFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 16) 0 DeathclawFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 17) 0 GeckoFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 18) 0 VCrGiantRatFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 19) 0 MirelurkFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 19) 0 LakelurkFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 19) 0 VCrLakeLurkFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 20) 0 MoleRatFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 21) 0 YaoGuaiFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 21) 0 NVDLC02CrYaoGuaiFaction
+
+End

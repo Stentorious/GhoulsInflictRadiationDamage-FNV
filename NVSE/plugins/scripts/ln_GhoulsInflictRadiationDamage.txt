@@ -21,100 +21,74 @@ if eval GetPluginVersion "ShowOffNVSE Plugin" < 145
 endif
 
 ; Load INI settings
-Goo1.AuxVarSetFlt "*GIRD_INI" (GetMaxOf 0 (GetINIFloat_Cached "General:fRadMul" "Stentorious\GhoulsInflictRadiationDamage.ini")) 0
-Goo1.AuxVarSetFlt "*GIRD_INI" (GetMaxOf 0 (GetINIFloat_Cached "General:fRadMin" "Stentorious\GhoulsInflictRadiationDamage.ini")) 1
+Goo1.AuxVarSetFlt "*GIRD_INI" (GetMaxOf 0 (GetINIFloat_Cached "General:fRadMul" "Stentorious\GhoulsInflictRadiationDamage.ini" 1)) 0
+Goo1.AuxVarSetFlt "*GIRD_INI" (GetMaxOf 0 (GetINIFloat_Cached "General:fRadMin" "Stentorious\GhoulsInflictRadiationDamage.ini" 1)) 1
 
+; Load factions
 ; Mutated
-if eval GetINIFloat_Cached "Creature:bGhoul" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword FeralGhoulFaction "InflictRadDamage"
-	if GetNthEffectBase DLC03FeralGhoulPoison 0 == DamageRadiationLevel
-		RemoveNthEffect DLC03FeralGhoulPoison 0
-	endif
-	if eval IsModLoaded "PointLookout.esm"
-		ref rEffect = EditorIDToFormID "DLC04FeralGhoulPoison"
-		if eval IsFormValid rEffect && GetNthEffectBase rEffect 0 == DamageRadiationLevel
-			RemoveNthEffect rEffect 0
-		endif
-	endif
-endif
-if eval GetINIFloat_Cached "Creature:bCentaur" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword CentaurFaction "InflictRadDamage"
-endif
-if eval GetINIFloat_Cached "Creature:bSuperMutant" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword SuperMutantFaction "InflictRadDamage"
-endif
-if eval GetINIFloat_Cached "Creature:bSwampFolk" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	if eval IsModLoaded "PointLookout.esm"
-		AssignKeyword (EditorIDToFormID "DLC04SwampFolkFaction") "InflictRadDamage"
-	endif
-endif
-if eval GetINIFloat_Cached "Creature:bSporeCarrier" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword SporePlantFaction "InflictRadDamage"
-	SetEventHandler "OnHitWith" (CompileScript "GhoulsInflictRadiationDamage\OnHitWith.gek") "first"::Player "second"::SporePlantSpitMissile
-	SetEventHandler "OnHitWith" (CompileScript "GhoulsInflictRadiationDamage\OnHitWith.gek") "first"::Player "second"::NVDLC02WeapSporePlantSpitMissile
-	SetEventHandler "OnHitWith" (CompileScript "GhoulsInflictRadiationDamage\OnHitWith.gek") "first"::Player "second"::NVDLC02WeapSporePlantSpitMissileLvl2
-endif
-if eval GetINIFloat_Cached "Creature:bTrog" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword DLC01TrogFaction "InflictRadDamage"
-endif
-if eval GetINIFloat_Cached "Creature:bTunneler" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword NVDLC04TunnelerFaction "InflictRadDamage"
-endif
-
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bGhoul" "Stentorious\GhoulsInflictRadiationDamage.ini" 1) 0
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bCentaur" "Stentorious\GhoulsInflictRadiationDamage.ini" 1) 1
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bSuperMutant" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 2
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bSwampFolk" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 3
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bSporeCarrier" "Stentorious\GhoulsInflictRadiationDamage.ini" 1) 4
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bTrog" "Stentorious\GhoulsInflictRadiationDamage.ini" 1) 5
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bTunneler" "Stentorious\GhoulsInflictRadiationDamage.ini" 1) 6
 ; Insect
-if eval GetINIFloat_Cached "Creature:bAnt" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword AntFaction "InflictRadDamage"
-endif
-if eval GetINIFloat_Cached "Creature:bBloatfly" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword BloatflyFaction "InflictRadDamage"
-	SetEventHandler "OnHitWith" (CompileScript "GhoulsInflictRadiationDamage\OnHitWith.gek") "first"::Player "second"::Bloatfly1HP
-endif
-if eval GetINIFloat_Cached "Creature:bCazador" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword VCrCazadorFaction "InflictRadDamage"
-endif
-if eval GetINIFloat_Cached "Creature:bMantis" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword MantisFaction "InflictRadDamage"
-endif
-if eval GetINIFloat_Cached "Creature:bRadroach" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword RadRoachFaction "InflictRadDamage"
-endif
-if eval GetINIFloat_Cached "Creature:bRadscorpion" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword RadscorpionFaction "InflictRadDamage"
-endif
-
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bAnt" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 7
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bBloatfly" "Stentorious\GhoulsInflictRadiationDamage.ini" 1) 8
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bCazador" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 9
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bMantis" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 10
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bRadroach" "Stentorious\GhoulsInflictRadiationDamage.ini" 1) 11
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bRadscorpion" "Stentorious\GhoulsInflictRadiationDamage.ini" 1) 12
 ; Animal
-if eval GetINIFloat_Cached "Creature:bBigHorner" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword VCrBigHornerFaction "InflictRadDamage"
-endif
-if eval GetINIFloat_Cached "Creature:bBrahmin" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword BrahminFaction "InflictRadDamage"
-endif
-if eval GetINIFloat_Cached "Creature:bDog" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword DogFaction "InflictRadDamage"
-endif
-if eval GetINIFloat_Cached "Creature:bDeathclaw" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword DeathclawFaction "InflictRadDamage"
-endif
-if eval GetINIFloat_Cached "Creature:bGecko" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword GeckoFaction "InflictRadDamage"
-endif
-if eval GetINIFloat_Cached "Creature:bGiantRat" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword VCrGiantRatFaction "InflictRadDamage"
-endif
-if eval GetINIFloat_Cached "Creature:bMirelurk" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword MirelurkFaction "InflictRadDamage"
-	AssignKeyword LakelurkFaction "InflictRadDamage"
-	AssignKeyword VCrLakeLurkFaction "InflictRadDamage"
-endif
-if eval GetINIFloat_Cached "Creature:bMoleRat" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword MoleRatFaction "InflictRadDamage"
-endif
-if eval GetINIFloat_Cached "Creature:bYaoGuai" "Stentorious\GhoulsInflictRadiationDamage.ini"
-	AssignKeyword YaoGuaiFaction "InflictRadDamage"
-	AssignKeyword NVDLC02CrYaoGuaiFaction "InflictRadDamage"
-endif
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bBigHorner" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 13
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bBrahmin" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 14
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bDog" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 15
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bDeathclaw" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 16
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bGecko" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 17
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bGiantRat" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 18
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bMirelurk" "Stentorious\GhoulsInflictRadiationDamage.ini" 1) 19
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bMoleRat" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 20
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bYaoGuai" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 21
 
 CloseFileSO "Stentorious\GhoulsInflictRadiationDamage.ini" 0
 
-; Init event handlers
+; Remove reaver rad damage
+if GetNthEffectBase DLC03FeralGhoulPoison 0 == DamageRadiationLevel
+	RemoveNthEffect DLC03FeralGhoulPoison 0
+endif
+if eval IsModLoaded "PointLookout.esm"
+	ref rEffect = EditorIDToFormID "DLC04FeralGhoulPoison"
+	if eval IsFormValid rEffect && GetNthEffectBase rEffect 0 == DamageRadiationLevel
+		RemoveNthEffect rEffect 0
+	endif
+endif
+
+; Load keywords
+array_var aForms = GetKeywordForms "InflictRadDamage"
+if eval (int iSize = ar_Size aForms) > 0
+	while (iSize -= 1) > -1
+		if eval IsBaseForm (ref rTemp = aForms[iSize]) && (GetType rTemp == 8 || GetType rTemp == 43)
+			AuxVarSetFlt "*InflictRadDamage" 1 0 rTemp
+		endif
+	loop
+endif
+aForms = Ar_Null
+
+; Update radiation dealing factions
+Call (CompileScript "GhoulsInflictRadiationDamage\UpdateForms.gek")
+
+; Event handlers
 SetEventHandler "OnHitWith" (CompileScript "GhoulsInflictRadiationDamage\OnHitWith.gek") "first"::Player "second"::Fists
+SetEventHandler "OnHitWith" (CompileScript "GhoulsInflictRadiationDamage\OnHitWith.gek") "first"::Player "second"::Bloatfly1HP
+SetEventHandler "OnHitWith" (CompileScript "GhoulsInflictRadiationDamage\OnHitWith.gek") "first"::Player "second"::SporePlantSpitMissile
+SetEventHandler "OnHitWith" (CompileScript "GhoulsInflictRadiationDamage\OnHitWith.gek") "first"::Player "second"::NVDLC02WeapSporePlantSpitMissile
+SetEventHandler "OnHitWith" (CompileScript "GhoulsInflictRadiationDamage\OnHitWith.gek") "first"::Player "second"::NVDLC02WeapSporePlantSpitMissileLvl2
+
+; MCM update event
+SetEventHandler "MCMExtUpdate" (begin function {array_var aTemp}
+	if eval (Ar_Find "CreatureRadiationDamage" aTemp) != Ar_BadNumericIndex
+		Call (CompileScript "GhoulsInflictRadiationDamage\UpdateForms.gek")
+	endif
+	aTemp = ar_Null
+end)
