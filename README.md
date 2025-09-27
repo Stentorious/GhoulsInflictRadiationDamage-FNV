@@ -9,10 +9,9 @@
 
 ## Configuration
 - Configurable via [MCM Extender](https://www.nexusmods.com/newvegas/mods/93642).
-- Set Radiation Attack damage multiplier.
-- Set minimum Radiation Attack damage.
-- Toggle which default creatures types deal radiation damage:
-- Ghouls, Centaurs, Trogs, Tunnelers, Bloatflies, Radroaches, Radscorpions, and Mirelurks.
+- Set radiation damage multiplier.
+- Set minimum radiation damage applied.
+- Toggle which creature types deal radiation damage.
 
 ## Requirements
 - [xNVSE](https://www.nexusmods.com/newvegas/mods/67883)
