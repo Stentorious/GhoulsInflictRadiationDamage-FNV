@@ -34,14 +34,8 @@ begin Function {rTarget, rWeapon}
 	endif
 
 	; Apply effect to player
-	SetNthEffectTraitNumeric rEffect 0 0 (GetMaxOf (Goo1.AuxVarGetFlt "*GIRD_INI" 1) ((fDamage = rTarget.GetHitHealthDamage) * (Goo1.AuxVarGetFlt "*GIRD_INI" 0)))
+	fDamage = GetMaxOf (Goo1.AuxVarGetFlt "*GIRD_INI" 1) ((rTarget.GetHitHealthDamage) * Goo1.AuxVarGetFlt "*GIRD_INI" 0)
+	SetNthEffectTraitNumeric rEffect 0 0 fDamage
 	Player.CastImmediate rEffect rAttacker
-	if eval fDamage < 10
-		PlaySound UIPipBoyRadiationA
-	elseif eval fDamage < 50
-		PlaySound UIPipBoyRadiationB
-	else
-		PlaySound UIPipBoyRadiationC
-	endif
 
 end
