@@ -1,4 +1,4 @@
-# Ghouls Inflict Radiation Damage
+# Creature Radiation Damage
 <p align="left">
     <img height="350px" src="https://staticdelivery.nexusmods.com/mods/130/images/77401/77401-1657199393-659418579.png">
 </p>
