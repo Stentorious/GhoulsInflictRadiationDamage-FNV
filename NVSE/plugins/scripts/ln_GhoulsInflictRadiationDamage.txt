@@ -45,7 +45,7 @@ Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bBigHorner" "S
 Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bBrahmin" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 14
 Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bDog" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 15
 Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bDeathclaw" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 16
-Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bGecko" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 17
+Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bGecko" "Stentorious\GhoulsInflictRadiationDamage.ini" 1) 17
 Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bGiantRat" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 18
 Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bMirelurk" "Stentorious\GhoulsInflictRadiationDamage.ini" 1) 19
 Goo1.AuxVarSetFlt "*GIRD_Fact" (eval GetINIFloat_Cached "Creature:bMoleRat" "Stentorious\GhoulsInflictRadiationDamage.ini" 0) 20

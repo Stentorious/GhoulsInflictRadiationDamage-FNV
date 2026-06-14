@@ -23,6 +23,7 @@ Begin Function {}
 	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 15) 0 DogFaction
 	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 16) 0 DeathclawFaction
 	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 17) 0 GeckoFaction
+	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 17) 0 VCrGoldenGeckoFaction
 	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 18) 0 VCrGiantRatFaction
 	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 19) 0 MirelurkFaction
 	AuxVarSetFlt "*InflictRadDamage" (Goo1.AuxVarGetFlt "*GIRD_Fact" 19) 0 LakelurkFaction

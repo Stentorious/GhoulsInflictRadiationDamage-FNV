@@ -102,7 +102,7 @@
 					"type": 5,
 					"enable": 1,
 					"mouse": "$CreatureMouse",
-					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 17, "configINI": "Creature:bGecko", "default": 0 }]
+					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 17, "configINI": "Creature:bGecko", "default": 1 }]
 				},
 				"19": {
 					"title": "$Ghoul",
