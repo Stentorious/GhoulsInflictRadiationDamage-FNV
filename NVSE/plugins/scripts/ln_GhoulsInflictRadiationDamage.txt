@@ -6,20 +6,6 @@ if eval Goo1.AuxVarGetFlt "*GIRD_Init" 0
 endif
 Goo1.AuxVarSetFlt "*GIRD_Init" 1 0
 
-; Check for requirements
-if eval GetNVSEVersion < 6 || (GetNVSEVersion == 6 && GetNVSERevision < 4)
-	MessageBoxEx "Ghouls Inflict Radiation missing requirement!%rInstall xNVSE 6.4.0+."
-	return
-endif
-if eval GetPluginVersion "JohnnyGuitarNVSE" < 390
-	MessageBoxEx "Ghouls Inflict Radiation missing requirement!%rInstall latest JohnnyGuitar NVSE plugin."
-	return
-endif
-if eval GetPluginVersion "ShowOffNVSE Plugin" < 145
-	MessageBoxEx "Ghouls Inflict Radiation missing requirement!%rInstall latest ShowOff NVSE plugin."
-	return
-endif
-
 ; Load INI settings
 Goo1.AuxVarSetFlt "*GIRD_INI" (GetMaxOf 0 (GetINIFloat_Cached "General:fRadMul" "Stentorious\GhoulsInflictRadiationDamage.ini" 1)) 0
 Goo1.AuxVarSetFlt "*GIRD_INI" (GetMaxOf 0 (GetINIFloat_Cached "General:fRadMin" "Stentorious\GhoulsInflictRadiationDamage.ini" 1)) 1
