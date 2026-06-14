@@ -23,7 +23,9 @@ begin Function {rTarget, rWeapon}
 
 	; Apply effect to player
 	fDamage = GetMaxOf (Goo1.AuxVarGetFlt "*GIRD_INI" 1) ((rTarget.GetHitHealthDamage) * Goo1.AuxVarGetFlt "*GIRD_INI" 0)
-	SetNthEffectTraitNumeric GoldenGeckoRadiation 0 0 fDamage
-	Player.CastImmediate GoldenGeckoRadiation; rAttacker
+	if eval fDamage > 0
+		SetNthEffectTraitNumeric GoldenGeckoRadiation 0 0 fDamage
+		Player.CastImmediate GoldenGeckoRadiation; rAttacker
+	endif
 
 end
