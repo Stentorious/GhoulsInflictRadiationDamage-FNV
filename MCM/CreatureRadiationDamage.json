@@ -23,7 +23,7 @@
 					"title": "$RadMul",
 					"type": 2.5,
 					"enable": 1,
-					"mouse": "$RadMulMouse",
+					"mouse": "$RadMulHelp",
 					"suffix": "x",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_INI", "key": 0, "configINI": "General:fRadMul", "default": 1 }],
 					"scale": { "valueDecimal": 2, "valueIncrement": 0.01, "valueMin": 0.1, "valueMax": 10, "suffix": "x" }
@@ -32,7 +32,7 @@
 					"title": "$RadMin",
 					"type": 2.5,
 					"enable": 1,
-					"mouse": "$RadMinMouse",
+					"mouse": "$RadMinHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_INI", "key": 1, "configINI": "General:fRadMin", "default": 1 }],
 					"scale": { "valueDecimal": 1, "valueIncrement": 0.1, "valueMin": 0, "valueMax": 10 }
 				}
@@ -48,154 +48,154 @@
 					"title": "$Ant",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 7, "configINI": "Creature:bAnt", "default": 0 }]
 				},
 				"3": {
 					"title": "$BigHorner",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 13, "configINI": "Creature:bBigHorner", "default": 0 }]
 				},
 				"5": {
 					"title": "$Bloatfly",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 8, "configINI": "Creature:bBloatfly", "default": 1 }]
 				},
 				"7": {
 					"title": "$Brahmin",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 14, "configINI": "Creature:bBrahmin", "default": 0 }]
 				},
 				"9": {
 					"title": "$Cazador",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 9, "configINI": "Creature:bCazador", "default": 0 }]
 				},
 				"11": {
 					"title": "$Centaur",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 1, "configINI": "Creature:bCentaur", "default": 1 }]
 				},
 				"13": {
 					"title": "$Deathclaw",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 16, "configINI": "Creature:bDeathclaw", "default": 0 }]
 				},
 				"15": {
 					"title": "$Dog",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 15, "configINI": "Creature:bDog", "default": 0 }]
 				},
 				"17": {
 					"title": "$Gecko",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 17, "configINI": "Creature:bGecko", "default": 1 }]
 				},
 				"19": {
 					"title": "$Ghoul",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 0, "configINI": "Creature:bGhoul", "default": 1 }]
 				},
 				"21": {
 					"title": "$GiantRat",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 18, "configINI": "Creature:bGiantRat", "default": 0 }]
 				},
 				"2": {
 					"title": "$Mantis",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 10, "configINI": "Creature:bMantis", "default": 0 }]
 				},
 				"4": {
 					"title": "$Mirelurk",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 19, "configINI": "Creature:bMirelurk", "default": 1 }]
 				},
 				"6": {
 					"title": "$MoleRat",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 20, "configINI": "Creature:bMoleRat", "default": 0 }]
 				},
 				"8": {
 					"title": "$Radroach",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 11, "configINI": "Creature:bRadroach", "default": 1 }]
 				},
 				"10": {
 					"title": "$Radscorpion",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 12, "configINI": "Creature:bRadscorpion", "default": 1 }]
 				},
 				"12": {
 					"title": "$SporeCarrier",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 4, "configINI": "Creature:bSporeCarrier", "default": 1 }]
 				},
 				"14": {
 					"title": "$SuperMutant",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 2, "configINI": "Creature:bSuperMutant", "default": 0 }]
 				},
 				"16": {
 					"title": "$SwampFolk",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 3, "configINI": "Creature:bSwampFolk", "default": 0 }]
 				},
 				"18": {
 					"title": "$Trog",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 5, "configINI": "Creature:bTrog", "default": 1 }]
 				},
 				"20": {
 					"title": "$Tunneler",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 6, "configINI": "Creature:bTunneler", "default": 1 }]
 				},
 				"22": {
 					"title": "$YaoGuai",
 					"type": 5,
 					"enable": 1,
-					"mouse": "$CreatureMouse",
+					"mouse": "$CreatureHelp",
 					"vars": [ { "form": "Goo1", "auxVar": "*GIRD_Fact", "key": 21, "configINI": "Creature:bYaoGuai", "default": 0 }]
 				}
 			}
