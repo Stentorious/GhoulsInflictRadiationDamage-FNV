@@ -3,7 +3,6 @@ ref rWeapon
 
 float fDamage
 ref rAttacker
-ref rEffect
 array_var aFactions
 array_var aIter
 array_var aResult
@@ -22,20 +21,9 @@ begin Function {rTarget, rWeapon}
 		return
 	endif
 
-	; Init cloned radiation effect
-	if eval IsReference (rEffect = Goo1.AuxVarGetRef "*GIRD_Ref") == 0 || GetType rEffect != 20 || rEffect.LNGetName != "Radiation Damage"
-		rEffect = TempCloneForm GoldenGeckoRadiation 1
-		rEffect.LNSetName "Radiation Damage"
-		SetNthEffectTraitNumeric rEffect 0 2 0
-		Goo1.AuxVarSetRef "*GIRD_Ref" rEffect
-	endif
-	if eval IsFormValid rEffect == 0
-		return
-	endif
-
 	; Apply effect to player
 	fDamage = GetMaxOf (Goo1.AuxVarGetFlt "*GIRD_INI" 1) ((rTarget.GetHitHealthDamage) * Goo1.AuxVarGetFlt "*GIRD_INI" 0)
-	SetNthEffectTraitNumeric rEffect 0 0 fDamage
-	Player.CastImmediate rEffect rAttacker
+	SetNthEffectTraitNumeric GoldenGeckoRadiation 0 0 fDamage
+	Player.CastImmediate GoldenGeckoRadiation; rAttacker
 
 end

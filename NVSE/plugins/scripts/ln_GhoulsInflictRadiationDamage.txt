@@ -64,9 +64,17 @@ if eval IsModLoaded "PointLookout.esm"
 	endif
 endif
 
+; Reuse GoldenGeckoRadiation effect
+AddNewEffect GoldenGeckoRadiation DamageRadiationLevel 0 0 0
+int iSize = GetNumEffects GoldenGeckoRadiation
+while (iSize -= 1) > -1
+	RemoveNthEffect GoldenGeckoRadiation iSize
+loop
+LNSetName "Radiation Damage" GoldenGeckoRadiation
+
 ; Load keywords
 array_var aForms = GetKeywordForms "InflictRadDamage"
-if eval (int iSize = ar_Size aForms) > 0
+if eval (iSize = ar_Size aForms) > 0
 	while (iSize -= 1) > -1
 		if eval IsBaseForm (ref rTemp = aForms[iSize]) && (GetType rTemp == 8 || GetType rTemp == 43)
 			AuxVarSetFlt "*InflictRadDamage" 1 0 rTemp
